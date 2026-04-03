@@ -102,9 +102,11 @@ All wireframe output MUST follow these constants. No exceptions.
 - Eyebrow text, buttons, labels, code: **Geist Mono**
 
 **Image placeholders:**
-- Always use a dashed border (`1px dashed #DFDFDF`)
+- Must always have a visible fill that contrasts with the section background
+- On light variant sections: background `#DFDFDF`, dashed border `1px dashed #DFDFDF`, label color `#464646`
+- On dark variant sections: background `#464646`, dashed border `1px dashed #464646`, label color `#DFDFDF`
 - Centered dimension text in Geist Mono (e.g., "1200×300", "48×48")
-- Background: transparent
+- Never use transparent background — the placeholder must always be clearly visible
 
 **Hard rules:**
 - Never use shadow
@@ -207,7 +209,7 @@ Immediately after generating the wireframe, run a QA pass before entering the mo
 5. **Color compliance** — Only achromatic palette used (white/gray/black from `_constants`)? No chromatic colors anywhere? Text contrast correct (#FFFFFF on dark, #000000 on light)?
 6. **Typography hierarchy** — Clear H1 > H2 > H3 > Body size progression? Consistent font sizing across same-level elements?
 7. **Section labels** — Every section annotated with a visible label?
-8. **Image placeholders** — All image placeholders have dashed border (1px dashed) + centered dimension text in Geist Mono? No solid-filled rectangles?
+8. **Image placeholders** — All image placeholders have a visible fill that contrasts with their section background? Dashed border present? Centered dimension text in Geist Mono? No transparent or invisible placeholders?
 9. **Content** — No lorem ipsum? Placeholder text is realistic and appropriate length?
 10. **Completeness** — All sections from the section plan are present? Nothing missing or duplicated?
 

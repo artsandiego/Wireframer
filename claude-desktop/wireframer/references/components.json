@@ -28,11 +28,19 @@
       }
     },
     "imagePlaceholder": {
-      "background": "transparent",
-      "border": "1px dashed #DFDFDF",
+      "onLight": {
+        "background": "#DFDFDF",
+        "border": "1px dashed #DFDFDF",
+        "labelColor": "#464646"
+      },
+      "onDark": {
+        "background": "#464646",
+        "border": "1px dashed #464646",
+        "labelColor": "#DFDFDF"
+      },
       "label": "Centered dimension text, e.g. '1200×300' or '48×48'",
       "labelFont": "Geist Mono",
-      "labelColor": "#DFDFDF"
+      "note": "Image placeholders must always have a visible fill that contrasts with the section background. Use onLight when the parent section uses a light variant, onDark when the parent uses a dark variant."
     },
     "rules": [
       "Never use shadow",
@@ -708,6 +716,52 @@
         "lineHeight": 1.8,
         "padding": 32,
         "maxWidth": 800
+      }
+    ]
+  },
+
+  "about-split": {
+    "name": "About — Split (Image + Text)",
+    "category": "about",
+    "variants": {
+      "light": {
+        "background": "#FFFFFF",
+        "tagColor": "#464646",
+        "headlineColor": "#121212",
+        "bodyColor": "#464646"
+      },
+      "dark": {
+        "background": "#121212",
+        "tagColor": "#DFDFDF",
+        "headlineColor": "#FFFFFF",
+        "bodyColor": "#DFDFDF"
+      }
+    },
+    "layout": {
+      "direction": "row",
+      "gap": 48,
+      "align": "center",
+      "paddingX": 48,
+      "paddingY": 96
+    },
+    "children": [
+      {
+        "role": "image",
+        "type": "image-placeholder",
+        "flex": 1,
+        "height": 480,
+        "label": "600×480"
+      },
+      {
+        "role": "content",
+        "type": "group",
+        "flex": 1,
+        "layout": { "direction": "column", "gap": 16 },
+        "children": [
+          { "role": "tag", "type": "text", "font": "Geist Mono", "fontSize": 13, "fontWeight": 600, "letterSpacing": "0.08em", "textTransform": "uppercase" },
+          { "role": "headline", "type": "text", "font": "Geist", "fontSize": 32, "fontWeight": 700 },
+          { "role": "body", "type": "text", "font": "Geist", "fontSize": 15, "lineHeight": 1.7, "paragraphs": true }
+        ]
       }
     ]
   },
