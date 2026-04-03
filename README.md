@@ -4,37 +4,27 @@ AI wireframe generator for websites. It outputs structured, lo-fi wireframes to 
 
 Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Claude Desktop](https://claude.ai).
 
----
-
-## What it does
+# What it does
 
 - Generates wireframes from a product or page idea
 - Uses a component registry (`components.json`) so output is consistent every time
 - Supports multiple output targets: Figma, Paper MCP, Pencil MCP, and HTML
-- Runs a QA check after every generation (alignment, spacing, color, typography)
+- Runs a QA subagent that checks after every generation (alignment, spacing, color, typography)
 - Interactive modification loop — refine section by section until done
 - Saves new custom sections to the registry after approval, so the library grows over time
 
-## Design constants
+# Installation
 
-All wireframes follow strict rules:
+## Option 1: Claude Code CLI (Recommended)
 
-- **Colors**: Achromatic only — `#FFFFFF`, `#F5F5F5`, `#DFDFDF`, `#121212`, `#2C2C2C`, `#464646`. No chromatic colors.
-- **Fonts**: Geist (headings + body), Geist Mono (eyebrow, buttons, labels)
-- **Images**: Dashed border, dimension label centered, fill contrasts with background
-- **Rules**: No shadows, no effects, no texture. 4pt grid. 12-column layout.
-
----
-
-## Installation
-
-### Option 1: Claude Code CLI (Recommended)
-
-One-line install via curl:
+### One-line install via curl:
+From your project folder, run this one-line installer
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/artsandiego/wireframer/main/install.sh | bash
 ```
+
+> 🚨 Make sure your terminal is open in the project where you want to install the `/wireframer` command.
 
 This creates the following in your project:
 
@@ -48,13 +38,15 @@ your-project/
 │       └── section-library.md          ← page-type compositions
 ```
 
-Then open Claude Code and type:
+Then open Claude Code in that project and run:
 
 ```
 /wireframer
 ```
 
-#### Manual install
+---
+
+### Manual Install (Optional):
 
 If you prefer not to use the install script, download the files manually:
 
@@ -89,9 +81,9 @@ Then open Claude Code and type:
 /wireframer
 ```
 
----
+</details>
 
-### Option 2: Claude Desktop App
+## Option 2: Claude Desktop App
 
 The Claude Desktop app uses `.skill` files, which you install through the UI.
 
@@ -110,7 +102,7 @@ wireframer.skill
 
 3. To install, open Claude Desktop → Customize → Skills → Create Skills → Upload a skill, then drag and drop the `wireframer.skill` file or click "Add Skill" and select it.
 
-#### Building the `.skill` file yourself
+### Building the `.skill` file yourself
 
 If you want to modify the skill and rebuild the `.skill` file:
 
@@ -124,9 +116,8 @@ zip -r wireframer.skill wireframer/
 
 3. Install the `.skill` file in Claude Desktop as described above.
 
----
 
-## Repo structure
+# Repo structure
 
 ```
 wireframer/
@@ -149,9 +140,17 @@ wireframer/
 
 The `components.json` and `section-library.md` files are identical across both versions (`claude-desktop` and `claude-code`). If you add a component in one, copy it to the other to keep them in sync.
 
----
 
-## Component registry
+# Design constants
+
+All wireframes follow strict rules:
+
+- **Colors**: Achromatic only — `#FFFFFF`, `#F5F5F5`, `#DFDFDF`, `#121212`, `#2C2C2C`, `#464646`. No chromatic colors.
+- **Fonts**: Geist (headings + body), Geist Mono (eyebrow, buttons, labels)
+- **Images**: Dashed border, dimension label centered, fill contrasts with background
+- **Rules**: No shadows, no effects, no texture. 4pt grid. 12-column layout.
+
+# Component registry
 
 The skill is powered by `components.json` — a structured library of section definitions. Each component has:
 
@@ -160,7 +159,7 @@ The skill is powered by `components.json` — a structured library of section de
 - **Children** with roles (logo, headline, cta, card-grid, etc.)
 - **Font assignments** (Geist or Geist Mono per role)
 
-### Built-in components
+## Built-in components
 
 | ID | Name | Category |
 |----|------|----------|
@@ -180,13 +179,11 @@ The skill is powered by `components.json` — a structured library of section de
 | `about-split` | About — Split (Image + Text) | about |
 | `footer` | Footer | footer |
 
-### Adding custom components
+## Adding custom components
 
 When you request a section that doesn't exist in the registry, Wireframer generates it on the fly. After you approve the output, it asks if you want to save it as a reusable component. If you say yes, it appends the section to `components.json` with light and dark variants, making it available for all future wireframes.
 
----
-
-## Usage
+# Usage
 
 1. Describe what you want to wireframe (a landing page, portfolio, etc.)
 2. Pick an output target (Figma, Paper, Pencil, HTML)
@@ -196,8 +193,6 @@ When you request a section that doesn't exist in the registry, Wireframer genera
 6. You pick sections to modify, or confirm you're done
 7. Any new custom sections can be saved to the registry
 
----
-
-## License
+# License
 
 MIT
