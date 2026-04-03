@@ -1,6 +1,6 @@
 # Wireframer
 
-AI wireframe generator for websites. It outputs structured, lo-fi wireframes to Figma, Paper MCP, Pencil MCP, or HTML, driven by a component registry that keeps every wireframe consistent.
+AI wireframe generator skill for Claude. It outputs structured, lo-fi wireframes to Figma, Paper MCP, Pencil MCP, or HTML, driven by a component registry that keeps every wireframe consistent.
 
 Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Claude Desktop](https://claude.ai).
 
