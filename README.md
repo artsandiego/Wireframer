@@ -1,6 +1,6 @@
 # Wireframer
 
-AI wireframe generator skill for Claude. It outputs structured, lo-fi wireframes to Figma, Paper MCP, Pencil MCP, or HTML, driven by a component registry that keeps every wireframe consistent.
+Wireframe generator skill for Claude. It outputs structured, lo-fi wireframes to Figma, Paper MCP, Pencil MCP, or HTML, driven by a component registry that keeps every wireframe consistent.
 
 Built for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Claude Desktop](https://claude.ai).
 
@@ -193,6 +193,6 @@ When you request a section that doesn't exist in the registry, Wireframer genera
 6. You pick sections to modify, or confirm you're done
 7. Any new custom sections can be saved to the registry
 
-# License
+---
 
-MIT
+### Built by [Fixel](https://wearefixel.com/) with 🧡
