@@ -46,7 +46,7 @@ Then open Claude Code in that project and run:
 
 ---
 
-### Manual Install (Optional):
+### Manual Install:
 
 If you prefer not to use the install script, download the files manually:
 
